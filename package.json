@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node copy-standalone-assets.js",
-    "start": "node .next/standalone/server.js"
+    "build": "next build",
+    "start": "next start -p $PORT"
   },
   "dependencies": {
     "next": "15.3.8",
