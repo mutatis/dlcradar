@@ -2,7 +2,9 @@ const fs = require("fs");
 const path = require("path");
 
 function copyDir(source, destination) {
-  if (!fs.existsSync(source)) return;
+  if (!fs.existsSync(source)) {
+    return;
+  }
 
   fs.mkdirSync(destination, { recursive: true });
 
@@ -21,4 +23,4 @@ function copyDir(source, destination) {
 copyDir(".next/static", ".next/standalone/.next/static");
 copyDir("public", ".next/standalone/public");
 
-console.log("Standalone assets copiados.");
+console.log("Standalone assets copiados com sucesso.");
