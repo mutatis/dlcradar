@@ -335,31 +335,7 @@ export default function Home() {
         </section>
 
         <section className="grid">
-          
-          <aside className="panel">
-            <h2>Novidades</h2>
-
-            {events.length === 0 ? (
-              <p className="muted">Nenhuma DLC nova detectada ainda.</p>
-            ) : (
-              <div className="eventList">
-                {events.slice(0, 25).map((event) => (
-                  <a
-                    key={event.id}
-                    href={event.steamUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={`event ${event.read ? "" : "unread"}`}
-                  >
-                    <strong>{event.dlcName}</strong>
-                    <span>{event.gameName}</span>
-                    <small>{formatDate(event.createdAt)}</small>
-                  </a>
-                ))}
-              </div>
-            )}
-          </aside>
-         <div className="panel">
+          <div className="panel">
             <h2>Meus jogos</h2>
 
             {games.length === 0 ? (
@@ -426,6 +402,30 @@ export default function Home() {
               </div>
             )}
           </div>
+
+          <aside className="panel">
+            <h2>Novidades</h2>
+
+            {events.length === 0 ? (
+              <p className="muted">Nenhuma DLC nova detectada ainda.</p>
+            ) : (
+              <div className="eventList">
+                {events.slice(0, 25).map((event) => (
+                  <a
+                    key={event.id}
+                    href={event.steamUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={`event ${event.read ? "" : "unread"}`}
+                  >
+                    <strong>{event.dlcName}</strong>
+                    <span>{event.gameName}</span>
+                    <small>{formatDate(event.createdAt)}</small>
+                  </a>
+                ))}
+              </div>
+            )}
+          </aside>
         </section>
       </section>
     </main>
